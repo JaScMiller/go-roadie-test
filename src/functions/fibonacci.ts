@@ -8,7 +8,7 @@
  * @returns An array of the first x fibonacci numbers, with the smallest at index 0
  */
 export function getXFibonacciNumbers(x: number): Array<number> {
-  if (isNaN(x) || x < 0) {
+  if (isNaN(x) || x < 0 || Math.round(x) !== x) {
     throw new Error(`Tried to get ${x} fibonacci numbers.`);
   }
 

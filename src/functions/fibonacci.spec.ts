@@ -6,6 +6,10 @@ describe("fibonacci", () => {
       expect(() => getXFibonacciNumbers(-1)).toThrowError();
     });
 
+    it("should error when decimal number is used", () => {
+      expect(() => getXFibonacciNumbers(4.3)).toThrowError();
+    });
+
     it("should error when NaN is used", () => {
       expect(() => getXFibonacciNumbers(NaN)).toThrowError();
     });

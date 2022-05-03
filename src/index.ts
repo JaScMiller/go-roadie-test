@@ -10,9 +10,10 @@ import { readNumberFromInput, stopIO } from "./functions/input-output";
   if (
     sequenceLength === undefined ||
     sequenceLength < 0 ||
-    isNaN(sequenceLength)
+    isNaN(sequenceLength) ||
+    Math.round(sequenceLength) !== sequenceLength
   ) {
-    console.log(`Invalid input, please enter a number`);
+    console.log(`Invalid input, please enter a positive, whole number`);
   } else {
     const sequence = getXFibonacciNumbers(sequenceLength);
     console.log(sequence.join(", "));
