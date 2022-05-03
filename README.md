@@ -2,6 +2,10 @@
 
 A coding test based on the Fibonacci numbers
 
+## Setup
+
+When downloading the repository for the first time, use npm install to retrieve the required development packages.
+
 ## Testing
 
 Unit tests can be run using the npm run test command.
