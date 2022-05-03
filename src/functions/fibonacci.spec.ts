@@ -3,11 +3,11 @@ import { getXFibonacciNumbers } from "./fibonacci";
 describe("fibonacci", () => {
   describe("getXFibonacciNumbers", () => {
     it("should error when negative number is used", () => {
-      expect(getXFibonacciNumbers(-1)).toThrowError();
+      expect(() => getXFibonacciNumbers(-1)).toThrowError();
     });
 
     it("should error when NaN is used", () => {
-      expect(getXFibonacciNumbers(NaN)).toThrowError();
+      expect(() => getXFibonacciNumbers(NaN)).toThrowError();
     });
 
     it("should successfully return 0 numbers", () => {

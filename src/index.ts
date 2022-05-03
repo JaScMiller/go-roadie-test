@@ -1,5 +1,5 @@
 import { getXFibonacciNumbers } from "./functions/fibonacci";
-import { readNumberFromInput } from "./functions/input-output";
+import { readNumberFromInput, stopIO } from "./functions/input-output";
 
 (async () => {
   const sequenceLength = await readNumberFromInput(
@@ -12,10 +12,11 @@ import { readNumberFromInput } from "./functions/input-output";
     sequenceLength < 0 ||
     isNaN(sequenceLength)
   ) {
-    console.log(`Unable to parse ${sequenceLength}, please enter a number`);
-    return;
+    console.log(`Invalid input, please enter a number`);
+  } else {
+    const sequence = getXFibonacciNumbers(sequenceLength);
+    console.log(sequence.join(", "));
   }
 
-  const sequence = getXFibonacciNumbers(sequenceLength);
-  console.log(sequence.join(", "));
+  stopIO();
 })();

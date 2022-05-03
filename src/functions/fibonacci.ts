@@ -8,5 +8,23 @@
  * @returns An array of the first x fibonacci numbers, with the smallest at index 0
  */
 export function getXFibonacciNumbers(x: number): Array<number> {
-  throw new Error("Not yet implemented");
+  if (isNaN(x) || x < 0) {
+    throw new Error(`Tried to get ${x} fibonacci numbers.`);
+  }
+
+  const sequence: Array<number> = [];
+
+  for (let index = 0; index < x; index++) {
+    if (index === 0) {
+      sequence.push(0);
+    } else if (index === 1) {
+      sequence.push(1);
+    } else {
+      sequence.push(
+        sequence[sequence.length - 1] + sequence[sequence.length - 2]
+      );
+    }
+  }
+
+  return sequence;
 }
